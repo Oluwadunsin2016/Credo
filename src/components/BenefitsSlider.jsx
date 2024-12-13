@@ -43,8 +43,8 @@ const BenefitsSlider = () => {
             <h3 className="text-lg tracking-wider uppercase text-gray-500 font-semibold mb-2">
               BENEFIT
             </h3>
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4 mt-8">{card.title}</h2>
-            <p className="text-gray-600 text-lg mb-4">{card.description}</p>
+            <h2 className="text-xl md:text-3xl font-bold text-gray-800 mb-4 mt-8">{card.title}</h2>
+            <p className="text-gray-600 text-medium mb-4">{card.description}</p>
             </div>
             <div>
             <Button className=" rounded-md bg-white shadow">

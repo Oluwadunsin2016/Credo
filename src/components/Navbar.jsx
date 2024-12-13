@@ -30,7 +30,7 @@ const Navbar = () => {
 
             {/* Dropdown Menu */}
             {link.dropdown && (
-              <div className="absolute hidden group-hover:flex flex-col gap-3 bg-[#21293A] text-gray-100 py-2 shadow-lg rounded-md min-w-[16rem] z-50">
+              <div className="absolute hidden group-hover:flex flex-col bg-[#21293A] opacity-95 text-gray-100 py-2 shadow-lg rounded-md min-w-[18rem] z-50">
                 {link.dropdown.map((item, idx) => (
                   <div
                     key={idx}

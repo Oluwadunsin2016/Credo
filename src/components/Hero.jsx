@@ -25,7 +25,7 @@ const Hero = () => {
   }, []);
   return (
     <div className="px-6 md:px-24 bg-[#070611] min-h-[80vh] pt-8">
-    <div className="md:px-20 animate__animated animate__fadeInDown ">
+    <div className="md:px-20 z-[999]">
     
       <MobileNavbar />
       <Navbar />

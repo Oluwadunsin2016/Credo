@@ -34,7 +34,7 @@ const MobileNavbar = () => {
 
       {/* Dropdown Menu */}
       <div
-        className={`absolute top-16 left-0 z-[999] w-full bg-[#21293A] rounded-md shadow-lg transition-transform duration-300 ease-in-out ${
+        className={`absolute top-16 left-0 z-[999] w-full bg-[#21293A]  opacity-95 rounded-md shadow-lg transition-transform duration-300 ease-in-out ${
           menuOpen ? "transform scale-y-100" : "transform scale-y-0"
         } origin-top`}
       >
@@ -53,7 +53,7 @@ const MobileNavbar = () => {
                     title={item.name}
                     key={item.name}
                   >
-                    <ul className="mt-2 space-y-2">
+                    <ul className="mt-2">
                       {item.dropdown.map((dropdownItem, idx) => (
                         <li
                           key={idx}
@@ -80,12 +80,11 @@ const MobileNavbar = () => {
                   <span className="ml-1"><IoMdArrowForward size={18}/></span>
                 </button>
               ) : (
-                <a
-                  href={`#${item.name.toLowerCase().replace(/ /g, "-")}`}
-                  className="block px-2 py-1 text-gray-200 hover:text-blue-500"
+                <p
+                  className="px-4 text-gray-100 hover:text-[#21293A] py-2 hover:bg-gray-200 cursor-pointer rounded-md"
                 >
                   {item.name}
-                </a>
+                </p>
               )}
             </li>
           ))}
