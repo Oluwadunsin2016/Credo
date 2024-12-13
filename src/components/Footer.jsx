@@ -75,11 +75,11 @@ const Footer = () => {
             </ul>
            </div>
       </div>
-        <div className="flex flex-col items-center justify-center gap-2 md:grid grid-cols-12 py-8 md:mt-20">
-          <span className="col-start-2 col-span-5 text-wrap text-center md:text-start text-gray-500 font-semibold">
+        <div className="flex flex-col items-center justify-center gap-2 md:flex-row-reverse md:justify-between py-8 md:mt-20">
+          <span className="text-wrap text-center md:text-start text-gray-500 font-semibold">
             © {year} Credo. All right reserved. | Privacy Policy | Terms
           </span>
-          <div className="col-span-5 flex space-x-6 sm:justify-end">
+          <div className="flex space-x-6 sm:justify-end">
            {socialMedia.map((media,ind)=>(
             <Link key={ind} href="#"
                   className="text-gray-500 hover:text-gray-600"
