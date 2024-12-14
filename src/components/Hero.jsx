@@ -61,9 +61,9 @@ const Hero = () => {
         <p className="text-gray-500 font-semibold">Over 1M happy users</p>
         </div>
       </div>
-      <div className="h-[25rem] md:h-0">
+      <div className="h-[20rem] relative md:static md:h-0">
     <img className="hidden animate__animated animate__zoomIn md:block absolute w-[50rem] top-0 -right-[22rem] xl:-top-[5rem] xl:-right-[18rem]" src={tablet} alt="" />
-    <img className="block animate__animated animate__zoomIn md:hidden absolute -bottom-10 left-1/2 -translate-x-1/2 w-[25rem]" src={phone} alt="" />
+    <img className="block animate__animated animate__zoomIn md:hidden absolute left-1/2 -translate-x-1/2 w-[25rem]" src={phone} alt="" />
       </div>
     </div>
     </div>
