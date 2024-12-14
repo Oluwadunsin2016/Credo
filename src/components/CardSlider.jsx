@@ -99,7 +99,7 @@ const CardSlider = () => {
             <h3 className="tracking-wider uppercase text-blue-400 font-semibold mb-2">
               {card.title}
             </h3>
-            <p className="text-xl md:text-4xl text-gray-800 font-bold">
+            <p className="text-xl md:text-3xl text-gray-800 font-bold">
               {card.description}
             </p>
           </div>

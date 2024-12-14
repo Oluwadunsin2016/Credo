@@ -76,7 +76,7 @@ const Footer = () => {
            </div>
       </div>
         <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:justify-between py-8 md:mt-20">
-          <span className="text-wrap text-center md:text-start text-gray-500 font-semibold">
+          <span className="text-wrap text-sm text-center md:text-start text-gray-500 font-semibold">
             © {year} Credo. All right reserved. | Privacy Policy | Terms
           </span>
           <div className="flex space-x-6 sm:justify-end">
@@ -84,7 +84,7 @@ const Footer = () => {
             <Link key={ind} href="#"
                   className="text-gray-500 hover:text-gray-600"
             >
-              <media.icon size={25}/>
+              <media.icon size={20}/>
               <span className="sr-only">Facebook page</span>
             </Link>
            ))}

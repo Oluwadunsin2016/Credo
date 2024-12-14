@@ -24,13 +24,13 @@ const Hero = () => {
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
   return (
-    <div className="px-6 md:px-24 bg-[#070611] min-h-[80vh] pt-8">
-    <div className="md:px-20 z-[999]">
+    <div className="px-6 overflow-hidden md:px-24 bg-[#070611] min-h-[80vh] pt-8 md:pb-8">
+    <div className="xl:px-20">
     
       <MobileNavbar />
       <Navbar />
     </div>
-    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mt-[3rem] md:mt-[10rem] mb-8">
+    <div className="relative grid grid-cols-1 gap-8 md:grid-cols-2 mt-[3rem] md:mt-[10rem] mb-8">
       <div className="text-white flex flex-col gap-3 animate__animated animate__fadeInUp">
           <h1 className="text-3xl md:text-5xl font-bold leading-8 overflow-hidden">
       Getting{" "}
@@ -61,9 +61,9 @@ const Hero = () => {
         <p className="text-gray-500 font-semibold">Over 1M happy users</p>
         </div>
       </div>
-      <div className="animate__animated animate__zoomIn">
-    <img className="hidden md:block" src={tablet} alt="" />
-    <img className="block md:hidden" src={phone} alt="" />
+      <div className="h-[25rem] md:h-0">
+    <img className="hidden animate__animated animate__zoomIn md:block absolute w-[50rem] top-0 -right-[22rem] xl:-top-[5rem] xl:-right-[18rem]" src={tablet} alt="" />
+    <img className="block animate__animated animate__zoomIn md:hidden absolute -bottom-10 left-1/2 -translate-x-1/2 w-[25rem]" src={phone} alt="" />
       </div>
     </div>
     </div>

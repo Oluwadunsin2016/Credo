@@ -36,9 +36,9 @@ const BenefitsSlider = () => {
         {benefitCards.map((card) => (
           <div
             key={card.id}
-            className={`${card.color} flex-shrink-0 w-[100%] overflow-hidden md:min-h-[35rem] md:w-[80%] rounded-[2rem] snap-center grid grid-cols-1 md:grid-cols-2 gap-6`}
+            className={`${card.color} flex-shrink-0 w-[100%] overflow-hidden md:min-h-[28rem] md:w-[70%] rounded-[2rem] snap-center grid grid-cols-1 md:grid-cols-2 gap-2`}
           >
-          <div className="flex flex-col justify-between  p-6">
+          <div className="flex flex-col md:justify-between  p-6">
             <div >
             <h3 className="text-lg tracking-wider uppercase text-gray-500 font-semibold mb-2">
               BENEFIT
@@ -52,8 +52,8 @@ const BenefitsSlider = () => {
             </Button>
             </div>
           </div>
-          <div className="md:h-[35rem] flex items-end justify-center">
-          <img src={card.image} className="w-full h-full object-contain -mb-[2rem] md:-mb-[1rem]" alt="" />
+          <div className="relative md:h-[28rem] flex items-end justify-center">
+          <img src={card.image} className="w-[]" alt="" />
           </div>
           </div>
         ))}

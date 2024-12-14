@@ -12,7 +12,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-12 text-center animate__animated animate__fadeInUp">
+    <section className="py-12 text-center animate__animated animate__fadeInUp overflow-hidden">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
           Frequently asked Questions
@@ -21,10 +21,8 @@ const FAQ = () => {
           What makes Credo different? Here are some quick answers to your frequently asked questions to help you understand what sets Credo apart:
         </p>
         <div className="space-y-4 relative">
-    <div className="">
     <img src={backIcon} alt="" className="w-20 absolute top-5 -left-6" /> 
     <img src={backIcon} alt="" className="w-20 absolute rotate-45 bottom-5 -right-6" /> 
-    </div>
           {faqs.map((faq, index) => (
             <div
               key={index}
