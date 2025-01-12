@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className="bg-[#171927] rounded-full text-white px-6 py-4 items-center hidden md:flex justify-between shadow-md">
       {/* Logo */}
       <div className="flex items-center space-x-3">
-        <img src={navbarData.logo} alt="logo" className="w-24" />
+        <img src={navbarData.logo} alt="logo" className="w-24 bg-white rounded" />
       </div>
 
       {/* Links */}

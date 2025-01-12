@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { FiMenu, FiX } from "react-icons/fi"; // Menu icons
 import { navItems } from "../lib/data";
-import logo from '../assets/New-Credo-Logo-Blue-ETZ.svg'
+// import logo from '../assets/New-Credo-Logo-Blue-ETZ.svg'
+import logo from '../assets/monicard.png'
 import { IoMdArrowForward } from "react-icons/io";
 
 const MobileNavbar = () => {
@@ -14,7 +15,7 @@ const MobileNavbar = () => {
       <div className="flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="w-20" />
+          <img src={logo} alt="Logo" className="w-20 bg-white rounded" />
         </div>
 
         {/* Menu Toggle Button */}

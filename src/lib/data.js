@@ -1,7 +1,8 @@
 import iconOne from "../assets/IconOne.svg";
 import iconTwo from "../assets/IconTwo.svg";
 import iconThree from "../assets/IconThree.svg";
-import logo from "../assets/New-Credo-Logo-Blue-ETZ.svg";
+// import logo from "../assets/New-Credo-Logo-Blue-ETZ.svg";
+import logo from "../assets/monicard.png";
 import ekiti from "../assets/ekiti.webp";
 import HealthXP from "../assets/HealthXP.webp";
 import NAU from "../assets/NAU.webp";

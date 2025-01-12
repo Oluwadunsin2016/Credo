@@ -1,7 +1,8 @@
 import { Button, Link } from '@nextui-org/react';
 import { footerData } from '../lib/data';
 import { socialMedia } from '../lib/data';
-import logo from '../assets/New-Credo-Logo-Blue-ETZ.svg'
+// import logo from '../assets/New-Credo-Logo-Blue-ETZ.svg'
+import logo from '../assets/monicard.png'
 import CBNLogo from '../assets/CBNLogo.svg'
 
 const Footer = () => {
@@ -18,7 +19,7 @@ const Footer = () => {
         </div>
            <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mt-20 animate__animated animate__fadeInUp">
            <div className='hidden md:block'>
-           <img src={logo} alt="Logo" className="w-24 mb-4" />
+          <img src={logo} alt="Logo" className="w-24 mb-4 bg-white rounded" />
             <ul>
                 <li className=" text-gray-200 mb-2">
                  Smarter Payments for Everyone
@@ -58,7 +59,7 @@ const Footer = () => {
           </div>
         ))}
          <div className='flex flex-col justify-center items-center md:hidden'>
-           <img src={logo} alt="Logo" className="w-24 mb-4" />
+           <img src={logo} alt="Logo" className="w-24 mb-4 bg-white rounded" />
             <ul className='text-center'>
                 <li className=" text-gray-200 mb-2">
                  Smarter Payments for Everyone
