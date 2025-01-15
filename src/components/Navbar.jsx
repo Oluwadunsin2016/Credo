@@ -7,7 +7,8 @@ import { IoMdArrowForward } from "react-icons/io";
 
 const Navbar = () => {
   return (
-    <nav className="bg-[#171927] rounded-full text-white px-6 py-4 items-center hidden md:flex justify-between shadow-md">
+    <nav className="bg-[#31397a] rounded-full text-white px-6 py-4 items-center hidden md:flex justify-between shadow-md">
+    {/* bg-[#171927] */}
       {/* Logo */}
       <div className="flex items-center space-x-3">
         <img src={navbarData.logo} alt="logo" className="w-24 bg-white rounded" />
@@ -30,7 +31,7 @@ const Navbar = () => {
 
             {/* Dropdown Menu */}
             {link.dropdown && (
-              <div className="absolute hidden group-hover:flex flex-col bg-[#21293A] opacity-95 text-gray-100 py-2 shadow-lg rounded-md min-w-[18rem] z-50">
+              <div className="absolute hidden group-hover:flex flex-col bg-[#264586] opacity-95 text-gray-100 py-2 shadow-lg rounded-md min-w-[18rem] z-50">
                 {link.dropdown.map((item, idx) => (
                   <div
                     key={idx}
@@ -47,7 +48,7 @@ const Navbar = () => {
       </ul>
 
       {/* Sign In Button */}
-      <button className="bg-gray-700 px-4 py-2 rounded-full flex items-center space-x-1 hover:bg-gray-600">
+      <button className="bg-gray-200 px-4 py-2 text-[#31397a] rounded-full flex items-center space-x-1 hover:bg-gray-400">
         <span>{navbarData.signIn}</span>
         <span className="ml-1"><IoMdArrowForward size={18} /></span>
       </button>

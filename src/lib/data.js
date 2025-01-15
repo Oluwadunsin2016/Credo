@@ -24,12 +24,12 @@ import { IoLogoLinkedin } from "react-icons/io5";
 import { FaYoutube } from "react-icons/fa6";
 
 import one from "../assets/one.jpeg";
-import two from "../assets/two.jpeg";
+// import two from "../assets/two.jpeg";
 import three from "../assets/three.jpeg";
 import four from "../assets/four.jpeg";
 import five from "../assets/five.jpeg";
-import six from "../assets/six.jpeg";
-import seven from "../assets/seven.jpeg";
+// import six from "../assets/six.jpeg";
+// import seven from "../assets/seven.jpeg";
 
 
 
@@ -260,4 +260,4 @@ export const socialMedia=[
 {name:'Youtube',icon:FaYoutube},
 ]
 
-export const scrollImages=[one,two,three,four,five,six,seven]
+export const scrollImages=[five,four,one,three,]

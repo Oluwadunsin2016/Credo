@@ -10,7 +10,7 @@ const MobileNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="relative md:hidden bg-[#171927] rounded-full shadow-md">
+    <div className="relative md:hidden bg-[#31397a] rounded-full shadow-md">
       {/* Navbar Header */}
       <div className="flex items-center justify-between px-4 py-3">
         {/* Logo */}
@@ -35,7 +35,7 @@ const MobileNavbar = () => {
 
       {/* Dropdown Menu */}
       <div
-        className={`absolute top-16 left-0 z-[999] w-full bg-[#21293A]  opacity-95 rounded-md shadow-lg transition-transform duration-300 ease-in-out ${
+        className={`absolute top-16 left-0 z-[999] w-full bg-[#264586]  opacity-95 rounded-md shadow-lg transition-transform duration-300 ease-in-out ${
           menuOpen ? "transform scale-y-100" : "transform scale-y-0"
         } origin-top`}
       >
@@ -76,7 +76,7 @@ const MobileNavbar = () => {
                   </AccordionItem>
                 </Accordion>
               ) : item.name.includes("Sign In") ? (
-                <button className="bg-gray-700 px-4 py-2 text-gray-100 rounded-full flex items-center space-x-1 hover:bg-gray-600">
+                <button className="bg-gray-200 px-4 py-2 text-[#31397a] rounded-full flex items-center space-x-1 hover:bg-gray-400">
                   <span>{item.name}</span>
                   <span className="ml-1"><IoMdArrowForward size={18}/></span>
                 </button>
