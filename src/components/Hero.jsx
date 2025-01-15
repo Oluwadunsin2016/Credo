@@ -2,10 +2,11 @@ import { Button } from "@nextui-org/react";
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
 import MobileNavbar from "./MobileNavbar";
-import tablet from '../assets/HeroImage.webp'
-import phone from '../assets/homepageHeroMobile.png'
+// import tablet from '../assets/HeroImage.webp'
+// import phone from '../assets/homepageHeroMobile.png'
 import users from '../assets/gatewayUsers.svg'
 import { IoMdArrowForward } from "react-icons/io";
+import ImageAutoScroll from "./ImageAutoScroll";
 
 const Hero = () => {
   const textArray = ["Merchants", "Creators", "Startups"];
@@ -62,8 +63,9 @@ const Hero = () => {
         </div>
       </div>
       <div className="h-[20rem] relative md:static md:h-0">
-    <img className="hidden animate__animated animate__zoomIn md:block absolute w-[50rem] top-0 -right-[22rem] xl:-top-[5rem] xl:-right-[18rem]" src={tablet} alt="" />
-    <img className="block animate__animated animate__zoomIn md:hidden absolute left-1/2 -translate-x-1/2 w-[25rem]" src={phone} alt="" />
+    {/* <img className="hidden animate__animated animate__zoomIn md:block absolute w-[50rem] top-0 -right-[22rem] xl:-top-[5rem] xl:-right-[18rem]" src={tablet} alt="" />
+    <img className="block animate__animated animate__zoomIn md:hidden absolute left-1/2 -translate-x-1/2 w-[25rem]" src={phone} alt="" /> */}
+    <ImageAutoScroll/>
       </div>
     </div>
     </div>
