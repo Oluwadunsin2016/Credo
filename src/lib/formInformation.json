@@ -30,7 +30,7 @@
         {
           "label": "Contact Number",
           "name": "contact",
-          "type": "text",
+          "type": "tel",
           "fieldType": "input",
           "column": 1,
           "required":true
@@ -60,7 +60,7 @@
           "label": "Business Sector",
           "name": "business_sector",
           "type": "text",
-          "fieldType": "dropdown",
+          "fieldType": "select",
           "options": [{"label":"Banking","name":"banking"}, {"label":"Finance","name":"finance"}, {"label":"Technology","name":"technology"}],
           "column": 2,
           "required":true

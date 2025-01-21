@@ -6,11 +6,12 @@ const IdentityVerification = ({register, errors,data,setValue}) => {
       <div className="flex flex-col gap-4">
       {data.formInputInfo[4].fields.map((info, i) => (
         <div key={i}>
-          {/* Dropdown Field */}
-          {info.fieldType === "dropdown" ? (
+          {/* select Field */}
+          {info.fieldType === "select" ? (
             <div>
                  <Select
                 label={info.label}
+                 required={info.required}
                 defaultValue=""
                 {...register(info.name, {
                   required: `${info.label} is required`,
@@ -37,6 +38,7 @@ const IdentityVerification = ({register, errors,data,setValue}) => {
                 size="sm"
                 type={info.type}
                 label={info.label}
+                 required={info.required}
                 {...register(info.name, { required: `${info.label} is required` })}
                 fullWidth
               />

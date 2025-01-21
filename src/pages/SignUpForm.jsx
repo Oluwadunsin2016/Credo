@@ -63,14 +63,13 @@ const SignUpForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Steps className="custom-steps mt-8 md:mt-0" current={current} items={items} labelPlacement="vertical" />
-      <div className="relative h-[25rem] my-8 overflow-x-hidden">
-        <div className="relative w-full h-[25rem] overflow-hidden">
+    <form onSubmit={handleSubmit(onSubmit)} className="md:h-screen overflow-y-auto overflow-x-hidden py-8 no-scrollbar">
+      <Steps className="custom-steps" current={current} items={items} labelPlacement="vertical" />
+      <div className={`relative ${current!==0&&'h-[28rem]'} mt-8 overflow-x-hidden`}>
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`absolute p-2 top-0 left-0 w-full h-full transition-transform duration-500 ease-in-out ${
+              className={`${current!==0&&'absolute'} p-2 top-0 left-0 w-full h-full transition-transform duration-500 ease-in-out ${
                 index === current
                   ? "translate-x-0"
                   : index > current
@@ -85,7 +84,6 @@ const SignUpForm = () => {
               {index === current && step.content({ register, errors, data,setValue })}
             </div>
           ))}
-        </div>
       </div>
       <div className="mb-4">
         <Checkbox {...register("terms", { required: "You must agree to the terms" })} radius="full"  classNames={{

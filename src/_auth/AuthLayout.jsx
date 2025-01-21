@@ -5,8 +5,8 @@ import monicardLogo from "../assets/monicardLogo.png";
 const AuthLayout = () => {
   return (
 <section className="bg-white">
-  <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
-    <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
+  <div className="md:grid md:min-h-screen md:grid-cols-12">
+    <section className="relative flex h-32 items-end bg-gray-900 md:col-span-5 md:h-full xl:col-span-6">
       <img
         alt=""
         src={dashboard}
@@ -14,7 +14,7 @@ const AuthLayout = () => {
       />
 <div className='absolute inset-0 bg-black/60'>
 </div>
-      <div className="hidden lg:relative lg:block lg:p-8 text-[#aeb3dd]">
+      <div className="hidden md:relative md:block md:p-8 text-[#aeb3dd]">
         <a className="block text-white" href="#">
           <span className="sr-only">Home</span>
           {/* <svg
@@ -43,10 +43,10 @@ const AuthLayout = () => {
     </section>
 
     <main
-      className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-8 xl:col-span-6"
+      className="flex items-center justify-center px-8 py-8 sm:px-12 md:col-span-7 md:px-16 md:py-8 xl:col-span-6 md:h-screen md:overflow-hidden"
     >
       <div className="w-full">
-        <div className="relative -mt-16 block lg:hidden text-[#31397a]">
+        <div className="relative -mt-16 block md:hidden text-[#31397a]">
           <a
             className="inline-flex size-16 items-center justify-center rounded-full bg-white text-blue-600 sm:size-20"
             href="#"
