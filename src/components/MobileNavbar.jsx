@@ -5,6 +5,7 @@ import { navItems } from "../lib/data";
 // import logo from '../assets/New-Credo-Logo-Blue-ETZ.svg'
 import logo from '../assets/monicard.png'
 import { IoMdArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const MobileNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,11 +62,17 @@ const MobileNavbar = () => {
                           className="flex items-center gap-2 px-4 hover:text-[#21293A] py-2 hover:bg-gray-200 cursor-pointer rounded-md"
                         >
                           <div>
-                            <img
-                              src={dropdownItem.icon}
-                              className="w-8 h-8"
-                              alt=""
-                            />
+                          {dropdownItem?.icon &&
+                        (typeof dropdownItem.icon === "string" ? (
+                          dropdownItem.icon.endsWith(".svg") ||
+                          dropdownItem.icon.startsWith("data:image/svg+xml") ? (
+                            <img src={dropdownItem.icon} className="w-8 h-8" alt="" />
+                          ) : (
+                            <dropdownItem.icon size={22} />
+                          )
+                        ) : (
+                          <dropdownItem.icon size={22} />
+                        ))}
                           </div>
                           <span className="font-medium">
                             {dropdownItem.name}
@@ -76,10 +83,10 @@ const MobileNavbar = () => {
                   </AccordionItem>
                 </Accordion>
               ) : item.name.includes("Sign In") ? (
-                <button className="bg-gray-200 px-4 py-2 text-[#31397a] rounded-full flex items-center space-x-1 hover:bg-gray-400">
+                <Link  to='/sign-in' className="bg-gray-200 px-4 py-2 text-[#31397a] rounded-full flex items-center space-x-1 hover:bg-gray-400">
                   <span>{item.name}</span>
                   <span className="ml-1"><IoMdArrowForward size={18}/></span>
-                </button>
+                </Link>
               ) : (
                 <p
                   className="px-4 text-gray-100 hover:text-[#21293A] py-2 hover:bg-gray-200 cursor-pointer rounded-md"
