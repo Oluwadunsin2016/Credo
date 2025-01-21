@@ -90,3 +90,10 @@ height:0
 }
 
 
+.custom-steps .ant-steps-item-process .ant-steps-item-icon {
+  background-color: #3f488d !important; /* Orange for active */
+  border-color: #3f488d !important;
+}
+
+
+

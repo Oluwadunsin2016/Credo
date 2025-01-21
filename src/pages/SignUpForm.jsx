@@ -7,6 +7,7 @@ import WorkInformation from "../components/form-steps/WorkInformation";
 import AccountInformation from "../components/form-steps/AccountInformation";
 import IdentityVerification from "../components/form-steps/IdentityVerification";
 import data from "../lib/formInformation.json";
+import { Checkbox } from "@nextui-org/react";
 
 const steps = [
   {
@@ -58,14 +59,12 @@ const SignUpForm = () => {
   }));
 
   const onSubmit = (data) => {
-    if (current === steps.length - 1) {
       console.log("Form submitted:", data);
-    }
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Steps current={current} items={items} labelPlacement="vertical" />
+      <Steps className="custom-steps mt-8 md:mt-0" current={current} items={items} labelPlacement="vertical" />
       <div className="relative h-[25rem] my-8 overflow-x-hidden">
         <div className="relative w-full h-[25rem] overflow-hidden">
           {steps.map((step, index) => (
@@ -88,20 +87,16 @@ const SignUpForm = () => {
           ))}
         </div>
       </div>
-      <div className="flex items-center mb-4">
-        <input
-          type="checkbox"
-          id="terms"
-          {...register("terms", { required: "You must agree to the terms" })}
-          className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label htmlFor="terms" className="ml-2 text-sm text-gray-600">
+      <div className="mb-4">
+        <Checkbox {...register("terms", { required: "You must agree to the terms" })} radius="full"  classNames={{
+    label: 'text-sm text-gray-600',
+  }}>
           I agree to the terms and conditions
-        </label>
-      </div>
+      </Checkbox>
       {errors.terms && (
         <p className="text-red-500 text-sm">{errors.terms.message}</p>
       )}
+      </div>
       <div
         className={`flex items-center ${
           current == 0 ? "justify-end" : "justify-between"
@@ -123,9 +118,9 @@ const SignUpForm = () => {
           </Button>
         )}
         {current === steps.length - 1 && (
-          <Button type="submit" className="bg-[#3f488d] text-white hover:!text-white hover:!bg-[#31397a]">
+          <button type="submit" className="bg-[#3f488d] text-white py-1.5 px-4 rounded text-sm hover:bg-[#31397a] focus:outline-none">
             Submit
-          </Button>
+          </button>
         )}
       </div>
       <p className="mt-4 text-center text-gray-600">
