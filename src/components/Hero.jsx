@@ -35,14 +35,14 @@ useEffect(() => {
     return () => clearInterval(interval); // Cleanup on unmount
   }, [textArray.length]);
   return (
-    <div className="px-6 overflow-hidden md:px-24 bg-[#3067ce] min-h-[80vh] pt-8 md:pb-8">
+    <div className="px-6 overflow-hidden md:px-24 bg-[#3067ce] min-h-[80vh] pt-20 md:pb-8">
     {/* bg-[#070611] */}
     {/* text-[#ec8836] */}
-    <div className="xl:px-20">
+    {/* <div className="xl:px-20">
     
       <MobileNavbar />
       <Navbar />
-    </div>
+    </div> */}
     <div className="relative grid grid-cols-1 gap-8 md:grid-cols-2 mt-[3rem] md:mt-[10rem] mb-8">
       <div className="text-white flex flex-col gap-3 animate__animated animate__fadeInUp">
           <h1 className="text-3xl md:text-5xl font-bold leading-8 overflow-hidden">

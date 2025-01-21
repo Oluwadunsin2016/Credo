@@ -17,17 +17,22 @@ import accelerateSvg from "../assets/accelerateSvg.svg";
 import scaleBg from "../assets/scaleBg.svg";
 import sourceCodeBg from "../assets/sourceCodeBg.svg";
 import flashSvg from "../assets/flashSvg.svg";
-import { MdFacebook } from "react-icons/md";
-import { FaSquareInstagram } from "react-icons/fa6";
+import { MdBusinessCenter, MdEmail, MdFacebook } from "react-icons/md";
+import { FaCreditCard, FaSquareInstagram, FaUsers } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
-import { IoLogoLinkedin } from "react-icons/io5";
+import { IoLogoLinkedin, IoPersonSharp } from "react-icons/io5";
 import { FaYoutube } from "react-icons/fa6";
+
+// import WhatsApp from "../assets/WhatsApp.svg";
+// import whatsapp from "../assets/whatsapp.png";
 
 import one from "../assets/one.jpeg";
 // import two from "../assets/two.jpeg";
 import three from "../assets/three.jpeg";
 import four from "../assets/four.jpeg";
 import five from "../assets/five.jpeg";
+import { RiWhatsappFill } from "react-icons/ri";
+import { GrSchedule } from "react-icons/gr";
 // import six from "../assets/six.jpeg";
 // import seven from "../assets/seven.jpeg";
 
@@ -54,16 +59,20 @@ export const navbarData = {
       name: "Products",
       dropdown: [
         {
-          name: "Payment Gateway",
-          icon: iconOne,
+          name: "Personal",
+          icon: IoPersonSharp,
         },
         {
-          name: "Payment Link",
-          icon: iconTwo,
+          name: "Business",
+          icon: MdBusinessCenter,
         },
         {
-          name: "Settlement",
-          icon: iconThree,
+          name: "Credit union members",
+          icon: FaUsers,
+        },
+        {
+          name: "HR Employee card",
+          icon: FaCreditCard,
         },
       ],
     },
@@ -71,7 +80,7 @@ export const navbarData = {
       name: "Company",
       dropdown: [
         {
-          name: "Why Credo",
+          name: "Why Monicard",
           icon: iconOne,
         },
         {
@@ -85,28 +94,46 @@ export const navbarData = {
       ],
     },
     {
-      name: "Resources",
+      name: "Investment",
       dropdown: [
         {
-          name: "Blog",
+          name: "Buy your home through the union",
           icon: iconOne,
         },
         {
-          name: "Knowledge Base",
+          name: "Buy your home through bidding",
           icon: iconTwo,
         },
         {
-          name: "Transaction Search",
+          name: "Buy and rent out",
           icon: iconThree,
         },
         {
-          name: "Developers Playground",
+          name: "Electric Vehicle",
           icon: iconOne,
+        },
+        {
+          name: "Merchant Invoice",
+          icon: iconTwo,
         },
       ],
     },
+    { name: "Contact Us",
+      dropdown: [
+        {
+          name: "Sechedule appointment",
+          icon: GrSchedule,
+        },
+        {
+          name: "Chat up on WhatsApp",
+          icon: RiWhatsappFill,
+        },
+        {
+          name: "Send an Email",
+          icon: MdEmail,
+        },
+      ], },
     { name: "Pricing" },
-    { name: "Contact Us" },
   ],
   signIn: "Sign In",
 };
@@ -114,31 +141,74 @@ export const navbarData = {
 export const navItems = [
   {
     name: "Products",
-    dropdown: [
-      { name: "Payment Gateway", icon: iconOne },
-      { name: "Payment Link", icon: iconTwo },
-      { name: "Settlement", icon: iconThree },
-    ],
+   dropdown: [
+        {
+          name: "Personal",
+          icon: IoPersonSharp,
+        },
+        {
+          name: "Business",
+          icon: MdBusinessCenter,
+        },
+        {
+          name: "Credit union members",
+          icon: FaUsers,
+        },
+        {
+          name: "HR Employee card",
+          icon: FaCreditCard,
+        },
+      ],
   },
   {
     name: "Company",
     dropdown: [
-      { name: "Why Credo", icon: iconOne },
+      { name: "Why Monicard", icon: iconOne },
       { name: "About Us", icon: iconTwo },
       { name: "FAQs", icon: iconThree },
     ],
   },
   {
-    name: "Resources",
+    name: "Investment",
     dropdown: [
-      { name: "Blog", icon: iconOne },
-      { name: "Knowledge Base", icon: iconTwo },
-      { name: "Transaction Search", icon: iconThree },
-      { name: "Developers Playground", icon: iconOne },
-    ],
+        {
+          name: "Buy your home through the union",
+          icon: iconOne,
+        },
+        {
+          name: "Buy your home through bidding",
+          icon: iconTwo,
+        },
+        {
+          name: "Buy and rent out",
+          icon: iconThree,
+        },
+        {
+          name: "Electric Vehicle",
+          icon: iconOne,
+        },
+        {
+          name: "Merchant Invoice",
+          icon: iconTwo,
+        },
+      ],
   },
+  { name: "Contact Us",
+       dropdown: [
+        {
+          name: "Sechedule appointment",
+          icon: GrSchedule,
+        },
+        {
+          name: "Chat up on WhatsApp",
+          icon: RiWhatsappFill,
+        },
+        {
+          name: "Send an Email",
+          icon: MdEmail,
+        },
+      ], },
   { name: "Pricing" },
-  { name: "Contact Us" },
   { name: "Sign In" },
 ];
 

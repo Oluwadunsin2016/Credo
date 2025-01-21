@@ -1,28 +1,25 @@
-
-import BenefitsSlider from "./components/BenefitsSlider"
-import CardSlider from "./components/CardSlider"
-import Credo from "./components/Credo"
-import FAQ from "./components/FAQ"
-import Footer from "./components/Footer"
-import Hero from "./components/Hero"
-import LittleGuy from "./components/LittleGuy"
-import Miscellaneous from "./components/Miscellaneous"
-import Testimonials from "./components/Testimonials"
-
+import {Routes,Route} from 'react-router-dom'
+import AuthLayout from './_auth/AuthLayout'
+import RootLayout from './_root/RootLayout'
+import Home from './pages/Home'
+import SignUpForm from './pages/SignUpForm'
+import SignInForm from './pages/SignInForm'
+// import MultiStepForm from './pages/MultiStepForm'
+// import AntDForm from './pages/AntDForm'
 
 const App = () => {
   return (
-    <div>
-    <Hero/>
-<Miscellaneous/>
-    <Credo/>
-    <BenefitsSlider/>
-    <LittleGuy/>
-    <CardSlider/>
-    <Testimonials/>
-    <FAQ/>
-    <Footer/>
-    </div>
+    <Routes>
+    <Route element={<AuthLayout/>}>
+    <Route path='/sign-up' element={<SignUpForm/>}/>
+    <Route path='/sign-in' element={<SignInForm/>}/>
+    {/* <Route path='/multi' element={<AntDForm/>}/> */}
+    {/* <Route path='/multi' element={<MultiStepForm/>}/> */}
+    </Route>
+    <Route element={<RootLayout/>}>
+    <Route path='/' element={<Home/>}/>
+    </Route>
+    </Routes>
   )
 }
 
