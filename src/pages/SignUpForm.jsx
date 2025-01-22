@@ -39,20 +39,18 @@ const SignUpForm = () => {
     setValue
   } = useForm({});
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState("next");
 
-  const next = (data) => {
-    // Use `handleSubmit` to validate current step
-    handleSubmit(() => {
-      setDirection("next");
-      setCurrent(current + 1); // Proceed to the next step only if valid
-    })(data);
-  };
+const next = (data) => {
+  handleSubmit(() => {
+    setCurrent((prev) => prev + 1);
+  })(data);
+};
 
-  const prev = () => {
-    setDirection("prev");
-    setCurrent(current - 1);
-  };
+const prev = () => {
+  setCurrent((prev) => prev - 1);
+};
+
+
   const items = steps.map((item) => ({
     key: item.title,
     title: item.title,
@@ -63,23 +61,19 @@ const SignUpForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="md:h-screen overflow-y-auto overflow-x-hidden py-8 no-scrollbar">
-      <Steps className="custom-steps" current={current} items={items} labelPlacement="vertical" />
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Steps className="custom-steps mt-8 md:mt-0" current={current} items={items} labelPlacement="vertical" />
       <div className={`relative ${current!==0&&'h-[28rem]'} mt-8 overflow-x-hidden`}>
           {steps.map((step, index) => (
             <div
               key={index}
               className={`${current!==0&&'absolute'} p-2 top-0 left-0 w-full h-full transition-transform duration-500 ease-in-out ${
-                index === current
-                  ? "translate-x-0"
-                  : index > current
-                  ? direction === "next"
-                    ? "translate-x-full"
-                    : "-translate-x-full"
-                  : direction === "prev"
-                  ? "-translate-x-full"
-                  : "translate-x-full"
-              }`}
+                 index === current
+          ? "translate-x-0"
+          : index > current
+          ? "translate-x-full"
+          : "-translate-x-full"
+      }`}
             >
               {index === current && step.content({ register, errors, data,setValue })}
             </div>

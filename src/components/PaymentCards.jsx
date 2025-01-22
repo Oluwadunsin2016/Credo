@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { miscellaneous } from "../lib/data";
+import { paymentCards } from "../lib/data";
 
 
 
-const Miscellaneous = () => {
+const PaymentCards = () => {
   const scrollContainer = useRef(null);
   const [direction, setDirection] = useState("right"); // "right" or "left"
 
@@ -40,12 +40,12 @@ const Miscellaneous = () => {
         className="flex space-x-8 items-center justify-between whitespace-nowrap scrollbar-hide"
         style={{ overflowX: "auto", scrollBehavior: "smooth" }}
       >
-        {miscellaneous.map((item, index) => (
-          <div key={index} className="flex-shrink-0">
+        {paymentCards.map((item, index) => (
+          <div key={index} className="flex-shrink-0 h-16 w-24 cursor-pointer">
             <img
               src={item.logo}
               alt={item.name}
-              className="h-16 w-16 md:h-20 md:w-20 object-contain"
+              className="w-full h-full object-contain"
             />
           </div>
         ))}
@@ -55,4 +55,4 @@ const Miscellaneous = () => {
   );
 };
 
-export default Miscellaneous;
+export default PaymentCards;

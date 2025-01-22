@@ -22,6 +22,13 @@ import { FaCreditCard, FaSquareInstagram, FaUsers } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { IoLogoLinkedin, IoPersonSharp } from "react-icons/io5";
 import { FaYoutube } from "react-icons/fa6";
+import fedEx from "../assets/card/fedEx.jpeg";
+import paradox from "../assets/card/paradox.jpeg";
+import ups from "../assets/card/ups.jpeg";
+import mastercard from "../assets/card/mastercard.jpeg";
+import visa from "../assets/card/visa.jpeg";
+import stripe from "../assets/card/stripe.jpeg";
+import piggyvest from "../assets/card/piggyvest.jpeg";
 
 // import WhatsApp from "../assets/WhatsApp.svg";
 // import whatsapp from "../assets/whatsapp.png";
@@ -331,3 +338,13 @@ export const socialMedia=[
 ]
 
 export const scrollImages=[five,four,one,three,]
+
+export const paymentCards = [
+  { name: "FedEx", logo: fedEx },
+  { name: "Paradox", logo: paradox },
+  { name: "Mastercard", logo: mastercard },
+  { name: "Visa", logo: visa },
+  { name: "Ups", logo: ups },
+  { name: "Stripe", logo: stripe },
+  { name: "Piggyvest", logo: piggyvest },
+];

@@ -43,7 +43,7 @@ const AuthLayout = () => {
     </section>
 
     <main
-      className="flex items-center justify-center px-8 py-8 sm:px-12 md:col-span-7 md:px-16 md:py-8 xl:col-span-6 md:h-screen md:overflow-hidden"
+      className="flex items-center justify-center px-8 py-8 sm:px-12 md:col-span-7 md:px-0 md:py-0 xl:col-span-6 md:h-screen md:overflow-hidden"
     >
       <div className="w-full">
         <div className="relative -mt-16 block md:hidden text-[#31397a]">
@@ -76,7 +76,9 @@ const AuthLayout = () => {
           </p>
         </div>
     {/* <SignUpForm/> */}
+    <div className='md:px-16 md:py-8 md:h-screen overflow-y-auto overflow-x-hidden'>
     <Outlet/>
+    </div>
       </div>
     </main>
   </div>

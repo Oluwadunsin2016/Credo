@@ -5,7 +5,7 @@ import Credo from "../components/Credo"
 import FAQ from "../components/FAQ"
 import Hero from "../components/Hero"
 import LittleGuy from "../components/LittleGuy"
-import Miscellaneous from "../components/Miscellaneous"
+import PaymentCards from "../components/PaymentCards"
 import Testimonials from "../components/Testimonials"
 
 
@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div>
     <Hero/>
-<Miscellaneous/>
+<PaymentCards/>
     <Credo/>
     <BenefitsSlider/>
     <LittleGuy/>
