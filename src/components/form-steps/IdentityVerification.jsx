@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Input, Select, SelectItem } from '@nextui-org/react'
+import FileUpload from '../FileUpload'
 
-const IdentityVerification = ({register, errors,data,setValue}) => {
+const IdentityVerification = ({register, errors,data,setValue,watch}) => {
+  const selectedIdentity = watch("identity", "");
   return (
       <div className="flex flex-col gap-4">
-      {data.formInputInfo[4].fields.map((info, i) => (
+      {data?.map((info, i) => (
         <div key={i}>
           {/* select Field */}
           {info.fieldType === "select" ? (
@@ -15,12 +17,12 @@ const IdentityVerification = ({register, errors,data,setValue}) => {
                 defaultValue=""
                 {...register(info.name, {
                   required: `${info.label} is required`,
-                  onChange: (e) => setValue(info.name, e.target.value),
+                  onChange: (e) =>setValue(info.name, e.target.value),
                 })}
               >
               <SelectItem value="" disabled>Select an option</SelectItem>
-                {info.options.map((item, i) => (
-                  <SelectItem key={i} value={item.name}>
+                {info.options.map((item) => (
+                  <SelectItem key={item.label}>
                     {item.label}
                   </SelectItem>
                 ))}
@@ -34,6 +36,13 @@ const IdentityVerification = ({register, errors,data,setValue}) => {
           ) : (
             /* Input Field */
             <div>
+            {info.type === "file"?
+            (<div className={!selectedIdentity&&'hidden'}>
+           <p>Upload your <i className='font-semibold'>{selectedIdentity}</i> image.</p>
+            <FileUpload/>
+            <div></div>
+            </div>):
+            (<div>
               <Input
                 size="sm"
                 type={info.type}
@@ -47,6 +56,8 @@ const IdentityVerification = ({register, errors,data,setValue}) => {
                   {errors[info.name].message}
                 </p>
               )}
+            </div>)
+            }
             </div>
           )}
         </div>

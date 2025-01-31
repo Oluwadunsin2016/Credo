@@ -137,6 +137,53 @@
       ]
     },
     {
+      "stepName": "Identity Verification",
+      "fields": [
+         {
+          "label": "Identity",
+          "name": "identity",
+          "type": "text",
+          "fieldType": "select",
+          "options": [
+  { "label": "National Identification Card", "name": "national_identification_card" },
+  { "label": "Driver's License", "name": "drivers_license" },
+  { "label": "Voter's Card", "name": "voters_card" },
+  { "label": "International Passport", "name": "international_passport" },
+  { "label": "CAC", "name": "cac" },
+  { "label": "Tax Clearance", "name": "tax_clearance" },
+  { "label": "SSN", "name": "ssn" }
+],
+          "column": 1,
+          "required":true
+                  },
+        {
+          "label": "BVN",
+          "note": "Select your means of identification at the top 👆",
+          "name": "bvn",
+          "type": "file",
+          "fieldType": "input",
+          "column": 1,
+          "required":true
+                  },
+        {
+          "label": "BVN",
+          "name": "bvn",
+          "type": "text",
+          "fieldType": "input",
+          "column": 1,
+          "required":true
+                  },
+        {
+          "label": "Utility Bills",
+          "name": "utility_bills",
+          "type": "text",
+          "fieldType": "input",
+          "column": 2,
+          "required":true
+                  }
+      ]
+    },
+     {
       "stepName": "Account Information",
       "fields": [
         {
@@ -166,51 +213,6 @@
         {
           "label": "Payment Apps",
           "name": "payment_apps",
-          "type": "text",
-          "fieldType": "input",
-          "column": 2,
-          "required":true
-                  }
-      ]
-    },
-    {
-      "stepName": "Identity Verification",
-      "fields": [
-        {
-          "label": "National Identity Card",
-          "name": "national_id",
-          "type": "text",
-          "fieldType": "input",
-          "column": 1,
-          "required":true
-                  },
-        {
-          "label": "Driver's License",
-          "name": "drivers_license",
-          "type": "text",
-          "fieldType": "input",
-          "column": 1,
-          "required":true
-                  },
-        {
-          "label": "CAC",
-          "name": "cac",
-          "type": "text",
-          "fieldType": "input",
-          "column": 2,
-          "required":true
-                  },
-        {
-          "label": "BVN",
-          "name": "bvn",
-          "type": "text",
-          "fieldType": "input",
-          "column": 1,
-          "required":true
-                  },
-        {
-          "label": "Utility Bills",
-          "name": "utility_bills",
           "type": "text",
           "fieldType": "input",
           "column": 2,

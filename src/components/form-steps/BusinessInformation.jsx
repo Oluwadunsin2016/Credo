@@ -4,7 +4,7 @@ import { Input, Select, SelectItem } from '@nextui-org/react'
 const BusinessInformation = ({register,errors,data,setValue}) => {
   return (
        <div className="flex flex-col gap-4">
-      {data.formInputInfo[1].fields.map((info, i) => (
+      {data?.map((info, i) => (
         <div key={i}>
           {/* select Field */}
           {info.fieldType === "select" ? (
@@ -19,8 +19,8 @@ const BusinessInformation = ({register,errors,data,setValue}) => {
                 })}
               >
               <SelectItem value="" disabled>Select an option</SelectItem>
-                {info.options.map((item, i) => (
-                  <SelectItem key={i} value={item.name}>
+                {info.options.map((item) => (
+                  <SelectItem key={item.label}>
                     {item.label}
                   </SelectItem>
                 ))}
