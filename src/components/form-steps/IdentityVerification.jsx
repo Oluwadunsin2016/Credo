@@ -2,8 +2,82 @@
 import { Input, Select, SelectItem } from '@nextui-org/react'
 import FileUpload from '../FileUpload'
 import UploadUtility from '../UploadUtility';
+import { useCallback, useEffect, useState } from 'react'
+import { useVerifyBvn } from '../../lib/api';
+import { debounce } from '../../lib/utils';
+import { ImSpinner8 } from 'react-icons/im';
 
 const IdentityVerification = ({register, errors,setValue,watch}) => {
+  const [bvn, setBvn] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [validationResult, setValidationResult] = useState(null);
+
+  const {mutate:verifyBvn, isPending, isError}=useVerifyBvn()
+
+    useEffect(() => {
+      if (bvn.length === 11) {
+        debouncedValidateBVN({number:bvn});
+      }
+    }, [bvn]);
+
+  const handleChange = (value,name) => {
+
+    if (value.length < bvn.length || value.length <= 11) {
+      console.log(value);
+      
+      setValue(name, value);
+      setBvn(value);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Backspace' || event.key === 'Delete') {
+      console.log('backspace or delete pressed');
+      
+    } else if (bvn.length >= 11) {
+      event.preventDefault(); 
+    }
+  };
+
+  const handleVerify = (payload) => {
+    console.log('triggered')
+    setIsLoading(true);
+verifyBvn(payload,{onSuccess:(data)=>{
+console.log(data);
+if (data?.data?.status) {
+  setValidationResult({
+    message: `${data.data.data.firstName} ${data.data.data.lastName}`,
+    type: "success",
+  });
+  setIsLoading(false);
+} else {
+  setValidationResult({
+    message: "Invalid BVN",
+    type: "error",
+  });
+  setIsLoading(false);
+}
+},onError:()=>{
+  setValidationResult({
+    message: "Invalid BVN",
+    type: "error",
+  });
+  setIsLoading(false);
+}})
+    // setTimeout(() => {
+    //   setIsVerified(true);
+    //   setIsLoading(false);
+    // }, 500);
+  };
+
+   const debouncedValidateBVN = useCallback(
+      debounce((payload) => {
+        console.log(payload);
+        
+        handleVerify(payload);
+      }, 500), // 500ms delay
+      []
+    );
 
  const options= [
     { label: "National Identification Card", name: "national_identification_card" },
@@ -51,7 +125,15 @@ const IdentityVerification = ({register, errors,setValue,watch}) => {
                 type='number'
                 label='BVN'
                  required
-                {...register('identity_verification.bvn', { required: `BVN is required` })}
+                {...register('identity_verification.bvn', { required: `BVN is required`,  validate: () => {
+                  if(isError){
+                      return 'Invalid BVN';
+                    }else{
+                      return '';
+                    }
+                  } })}
+                onKeyDown={handleKeyDown}
+                    onChange={(e) => handleChange(e.target.value, 'identity_verification.bvn')}
                 fullWidth
               />
               {errors?.identity_verification?.bvn && (
@@ -59,6 +141,22 @@ const IdentityVerification = ({register, errors,setValue,watch}) => {
                   {errors?.identity_verification?.bvn.message}
                 </p>
               )}
+                <p
+                                  className={`${
+                                    validationResult?.type == "error"
+                                      ? "text-red-600"
+                                      : "text-orange-500"
+                                  } text-sm font-semibold mt-1 flex items-center`}
+                                >
+                                  {isPending ? (
+                                    <ImSpinner8
+                                      size={15}
+                                      className="animate-spin text-gray-500 mt-2"
+                                    />
+                                  ) : (
+                                   <span>{validationResult?.type == "success"&&validationResult?.message}</span>
+                                  )}
+                                </p>
             </div>
             <div>
            <p className='mb-2'>Upload your utility bills</p>

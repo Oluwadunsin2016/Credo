@@ -19,3 +19,11 @@ export const useCheckAccountNumber = () => {
     },
   });
 };
+
+export const useVerifyBvn = () => {
+  return useMutation({
+    mutationFn: (payload) => {
+      return axios.post('https://lendnode.creditclan.com/myidentitypass/api/verify/bvn', payload);
+    },
+  });
+};

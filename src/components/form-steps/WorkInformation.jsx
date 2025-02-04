@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Input } from '@nextui-org/react'
 
+
 const WorkInformation = ({ register, errors }) => {
+
+  
   return (
     <div className="flex flex-col gap-4">
       <div>
