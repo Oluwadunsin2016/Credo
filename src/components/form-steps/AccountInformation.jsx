@@ -130,7 +130,7 @@ const AccountInformation = ({ register, errors, setValue }) => {
                     {...register('account_information.account_number', {
                       required: `Account number is required`,
                       validate: () => {
-                        if (!isPending&&isError) {
+                      if(isError){
                           return 'Invalid account number';
                         }else{
                           return '';
