@@ -6,7 +6,31 @@ const SignInForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      personal_information: {
+        full_name: "",
+        dob: "",
+        home_address: "",
+        phone_number: "",
+        email_address: "",
+        password: "",
+      },
+      work_information: {
+        work_email: "",
+        work_number: "",
+        office_address: "",
+        office_bstop: "",
+      },
+      business_information: {
+        business_sector: "",
+        business_email: "",
+        business_whatsapp_number: "",
+        business_address: "",
+        business_bstop: "",
+      },
+    },
+  });
 
   const onSubmit = (data) => {
     console.log("Form submitted:", data);

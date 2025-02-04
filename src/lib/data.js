@@ -140,7 +140,7 @@ export const navbarData = {
           icon: MdEmail,
         },
       ], },
-    { name: "Pricing" },
+    { name: "Payment" },
   ],
   signIn: "Sign In",
 };
@@ -215,7 +215,7 @@ export const navItems = [
           icon: MdEmail,
         },
       ], },
-  { name: "Pricing" },
+  { name: "Payment" },
   { name: "Sign In" },
 ];
 
@@ -404,7 +404,7 @@ export const personal_information = [
 
 // Export for Business Information
 export const business_information = [
-  {
+  { 
     label: "Business Sector",
     name: "business_sector",
     type: "text",
