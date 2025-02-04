@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { DatePicker, Input } from "@nextui-org/react";
 
-const PersonalInformation = ({ register, errors }) => {
+const PersonalInformation = ({ register, errors,setValue }) => {
   return (
     <div className="flex flex-col gap-4">
       <div>
@@ -26,8 +26,10 @@ const PersonalInformation = ({ register, errors }) => {
           type="date"
           label="Date of Birth"
           {...register("personal_information.dob", {
-            required: "Date of birth is required",
-          })} />
+              required: "Date of birth is required",
+            })}
+            onChange={(one) => setValue('personal_information.dob',one.toDate())}
+           />
         {/* <Input
         
           fullWidth
